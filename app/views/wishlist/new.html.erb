@@ -1,0 +1,9 @@
+<h1>New Wishlist</h1>
+
+<%= form_for :wishlist, url: wishlist_index_path do |f| %>
+    <p>
+        <%= f.label :title %><br/>
+        <%= f.text_field :title %>
+    </p>
+    <%= f.submit %>
+<% end %>
