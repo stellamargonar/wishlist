@@ -7,3 +7,16 @@
   <strong>Description:</strong>
   <%= @wishlist.description %>
 </p>
+
+
+<h3>Items</h3>
+<ul>
+  <%= render @wishlist.items %>
+</ul>
+
+<h4>Add an item:</h4>
+<%= render 'items/form' %>
+
+
+<%= link_to 'Edit', edit_wishlist_path(@wishlist) %> |
+<%= link_to 'Back', wishlists_path %>
