@@ -1,5 +1,6 @@
 class WishlistController < ApplicationController
     def new
+        @wishlist = Wishlist.new
     end
 
     def index
@@ -12,9 +13,12 @@ class WishlistController < ApplicationController
     
     def create
         @wishlist = Wishlist.new(wishlist_params)
-        @wishlist.save
         
-        redirect_to @wishlist
+        if @wishlist.save
+            redirect_to @wishlist
+        else
+            render 'new'
+        end
     end
     
     private

@@ -1,6 +1,22 @@
 <h1>New Wishlist</h1>
 
 <%= form_for :wishlist, url: wishlist_index_path do |f| %>
+    <!-- Validation errors -->
+    <% if @wishlist.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@wishlist.errors.count, "error") %>
+                prohibited this wishlist from being saved:
+            </h2>
+            <ul>
+                <% @wishlist.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+
     <p>
         <%= f.label :title %><br/>
         <%= f.text_field :title %>
