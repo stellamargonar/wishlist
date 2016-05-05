@@ -1,0 +1,10 @@
+<h1>Wishlists</h1>
+
+<ul>
+<% @wishlists.each do |wishlist| %>
+    <li>
+        <b><%= wishlist.title %></b><br/>
+        <%= wishlist.description %>
+    </li>
+<% end %>
+</ul>
