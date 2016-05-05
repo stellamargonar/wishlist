@@ -4,7 +4,9 @@
 <% @wishlists.each do |wishlist| %>
     <li>
         <b><%= wishlist.title %></b><br/>
-        <%= wishlist.description %>
+        <%= wishlist.description %><br/>
+        <%= link_to 'Show', wishlist_path(wishlist) %><br/>
+        <%= link_to 'edit', edit_wishlist_path(wishlist) %>
     </li>
 <% end %>
 </ul>

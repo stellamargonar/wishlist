@@ -11,13 +11,27 @@ class WishlistController < ApplicationController
         @wishlist = Wishlist.find(params[:id])
     end
     
+    def edit
+        @wishlist = Wishlist.find(params[:id])
+    end
+    
     def create
-        @wishlist = Wishlist.new(wishlist_params)
+        @wishlist = Wishlist.find(wishlist_params)
         
-        if @wishlist.save
+        if @wishlist.save(wishlist_params)
             redirect_to @wishlist
         else
             render 'new'
+        end
+    end
+    
+    def update
+        @wishlist = Wishlist.find(params[:id])
+        
+        if @wishlist.update(wishlist_params)
+            redirect_to @wishlist
+        else
+            render 'edit'
         end
     end
     
