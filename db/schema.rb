@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504192932) do
+ActiveRecord::Schema.define(version: 20160505193439) do
+
+  create_table "items", force: :cascade do |t|
+    t.string   "url"
+    t.string   "name"
+    t.float    "price"
+    t.boolean  "active"
+    t.integer  "wishlist_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "items", ["wishlist_id"], name: "index_items_on_wishlist_id"
 
   create_table "wishlists", force: :cascade do |t|
     t.text     "title"
