@@ -1,5 +1,7 @@
 class WishlistsController < ApplicationController
     
+    before_action :require_user
+    
     def index
         @wishlists = Wishlist.all
     end
