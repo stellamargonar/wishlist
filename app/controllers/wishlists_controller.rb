@@ -7,7 +7,7 @@ class WishlistsController < ApplicationController
     end
  
     def show
-        @wishlist = Wishlist.find(params[:id])
+        @wishlist = Wishlist.includes(:user).find(params[:id])
     end
  
     def new
@@ -20,6 +20,7 @@ class WishlistsController < ApplicationController
  
     def create
         @wishlist = Wishlist.new(wishlist_params)
+        @wishlist[:user_id] = current_user[:id]
         if @wishlist.save
             redirect_to @wishlist
         else

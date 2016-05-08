@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160508112148) do
+ActiveRecord::Schema.define(version: 20160508125603) do
 
   create_table "items", force: :cascade do |t|
     t.string   "url"
@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(version: 20160508112148) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
+
+  add_index "wishlists", ["user_id"], name: "index_wishlists_on_user_id"
 
 end
