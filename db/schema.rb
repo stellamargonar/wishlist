@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505193439) do
+ActiveRecord::Schema.define(version: 20160508112148) do
 
   create_table "items", force: :cascade do |t|
     t.string   "url"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20160505193439) do
   end
 
   add_index "items", ["wishlist_id"], name: "index_items_on_wishlist_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "wishlists", force: :cascade do |t|
     t.text     "title"
