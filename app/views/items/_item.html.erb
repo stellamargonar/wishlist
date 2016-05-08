@@ -1,10 +1,10 @@
 <div class="list-group-item">
     <div class="row-picture">
-        <img class="circle" src="item.img" alt="icon">
+        <img class="circle" src="<%= item.image_url %>" alt="icon">
     </div>
     <div class="row-content">
         <a href="<%= item.url %>">
-            <h4 class="list-group-item-heading"><%= item.name %></h4>
+            <h2 class="list-group-item-heading"><%= item.name %></h2>
         </a>
         <p class="list-group-item-text">
             <span class="badge">€ <%= item.price %></span>
