@@ -1,4 +1,14 @@
-<li class="list-group-item">
-    <b><a href="<%= item.url %>"><%= item.name %></a></b><br />
-    <%= item.price %>€  
-</li>
+<div class="list-group-item">
+    <div class="row-picture">
+        <img class="circle" src="item.img" alt="icon">
+    </div>
+    <div class="row-content">
+        <a href="<%= item.url %>">
+            <h4 class="list-group-item-heading"><%= item.name %></h4>
+        </a>
+        <p class="list-group-item-text">
+            <span class="badge">€ <%= item.price %></span>
+        </p>
+    </div>
+</div>
+<div class="list-group-separator"></div>

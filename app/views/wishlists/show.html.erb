@@ -1,22 +1,21 @@
 <div class="row">
 <div class="col-xs-12">
 
-<h1><%= @wishlist.title %></h1>
- 
-<p class="small">
-  <%= @wishlist.description %>
-</p>
+  <h1><%= @wishlist.title %></h1>
+  <%= link_to 'Back', wishlists_path , class: "btn btn-xs btn-default" %>
+  <%= link_to 'Edit', edit_wishlist_path(@wishlist) , class: "btn btn-xs btn-default" %> 
 
-<hr />
-<ul class="list-group">
-  <%= render @wishlist.items %>
-</ul>
+  <p class="small">
+    <%= @wishlist.description %>
+  </p>
 
-<h4>Add an item:</h4>
-<%= render 'items/form' %>
+  <hr />
+  <div class="list-group">
+    <%= render @wishlist.items %>
+  </div>
 
-
-<%= link_to 'Edit', edit_wishlist_path(@wishlist) %> |
-<%= link_to 'Back', wishlists_path %>
-
-</div></div>
+  <div class="well">
+    <%= render 'items/form' %>
+  </div>
+  </div>
+</div>

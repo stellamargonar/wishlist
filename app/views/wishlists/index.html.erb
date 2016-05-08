@@ -5,15 +5,18 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <ul class="list-group">
+        <div class="list-group">
         <% @wishlists.each do |wishlist| %>
-            <li class="list-group-item">
-                <b><%= wishlist.title %></b><br/>
-                <%= wishlist.description %><br/>
-                <%= link_to 'Show', wishlist_path(wishlist) %><br/>
-                <%= link_to 'edit', edit_wishlist_path(wishlist) %>
-            </li>
+        <div class="row-content">
+        
+            <a href="<%= wishlist_path(wishlist) %>">
+                <h4 class="list-group-item-heading"><%= wishlist.title %></h4>
+            </a>
+            <p class="list-group-item-text">
+                <span class="badge"><%= wishlist.description %></span>
+            </p>
+        </div>
         <% end %>
-        </ul>
+        </div>
     </div>
 </div>
